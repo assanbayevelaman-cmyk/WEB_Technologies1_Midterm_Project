@@ -54,6 +54,11 @@ footer a:hover, footer a:focus {
     color: var(--primary-color);
 }
 
+.navbar .nav-link.active {
+    background-color: #303530;
+    color: var(--primary-color);
+}
+
 main > h1 {
     padding-left: 1rem;
     border-left: 4px solid var(--primary-color);
@@ -65,6 +70,22 @@ main > section.text-center {
     border: 1px solid #d5e5d9;
     border-radius: 0.75rem;
     box-shadow: 0 4px 14px #e0e5e1;
+}
+
+/* Home navigation cards */
+main > section > ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+main > section > ul > li {
+    padding: 1.25rem;
+    border: 1px solid #d5e5d9;
+    border-radius: 0.75rem;
+    background-color: white;
 }
 
 main a {
@@ -83,7 +104,16 @@ main a:hover, main a:focus {
 }
 
 .card:hover {
+    border-color: var(--primary-color);
     box-shadow: 0 6px 18px #cdd8d0;
+}
+
+main .card-body {
+    padding: 1.25rem;
+}
+
+main .card-title {
+    font-weight: 600;
 }
 
 main .btn-dark {
@@ -151,7 +181,11 @@ footer p {
         padding: 0.5rem;
     }
 
-    main form {
+    main > section > ul {
+        grid-template-columns: 1fr;
+    }
+
+    main form, main .card-body {
         padding: 1rem;
     }
 
@@ -184,10 +218,10 @@ footer p {
 }
 
 /* Artists */
-.artist-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+.artist-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
 }
 
 .artist-photo {
@@ -195,7 +229,8 @@ footer p {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 260px;
+    height: 280px;
+    padding: 1rem;
     background-color: var(--light-color);
 }
 
@@ -203,9 +238,10 @@ footer p {
     display: block;
     max-width: 100%;
     max-height: 100%;
+    border-radius: 0.5rem;
 }
 
-.artist-card:nth-child(even) .artist-photo {
+.artists-page .row > div:nth-child(even) .artist-photo {
     background-color: #e9ecef;
 }
 
@@ -222,6 +258,10 @@ footer p {
 }
 
 /* Albums and Artists */
+.artist-card .card-body {
+    flex: 1;
+}
+
 .album-card .card-body, .artist-card .card-body {
     display: flex;
     flex-direction: column;
@@ -240,10 +280,6 @@ footer p {
 }
 
 @media (min-width: 576px) and (max-width: 991.98px) {
-    .artist-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .albums-page .navbar-nav, .artists-page .navbar-nav {
         flex-direction: column;
         gap: 0;
@@ -263,10 +299,6 @@ footer p {
 
     .albums-page h1, .artists-page h1 {
         font-size: 1.75rem;
-    }
-
-    .artist-grid {
-        grid-template-columns: 1fr;
     }
 
     .albums-page .navbar-nav, .artists-page .navbar-nav {
