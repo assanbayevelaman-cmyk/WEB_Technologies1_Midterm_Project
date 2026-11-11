@@ -7,6 +7,13 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/gallery.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+        <script src="js/catalog-data.js" defer></script>
+        <script src="js/music-details-data.js" defer></script>
+        <script src="js/music-details.js" defer></script>
+        <script src="js/gallery.js" defer></script>
+        <script src="js/script.js" defer></script>
     </head>
     <body class="artists-page">
         <header class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
@@ -32,12 +39,14 @@
         <main class="container my-5">
             <h1 class="mb-4">Artists</h1>
             <p class="mb-4">Meet the artists behind your favorite songs and albums.</p>
-            <section aria-label="Artist collection">
+            <section aria-label="Artist collection" data-image-gallery>
                 <div class="row g-4">
-                    <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="card artist-card h-100" id="the-weeknd">
                             <div class="artist-photo">
-                                <img src="artist-the-weeknd.jpg" alt="Portrait of The Weeknd">
+                                <button type="button" class="music-image-button music-image-button--portrait" data-gallery-trigger aria-label="Enlarge The Weeknd" aria-haspopup="dialog" aria-controls="music-panel">
+                                    <img src="artist-the-weeknd.jpg" alt="Portrait of The Weeknd">
+                                </button>
                                 <span class="artist-badge">Featured</span>
                             </div>
                             <div class="card-body">
@@ -45,83 +54,154 @@
                                 <p class="text-muted">R&amp;B / Synth-pop</p>
                                 <p class="card-text">Smooth vocals and electronic beats, from Blinding Lights to Starboy.</p>
                                 <p class="mb-3">In our collection: After Hours.</p>
-                                <a href="albums.html#after-hours" class="btn btn-dark">View album</a>
+                                <div class="music-card-actions">
+                                    <button type="button" class="btn btn-dark" data-music-details aria-haspopup="dialog" aria-controls="music-panel">Details</button>
+                                    <a href="albums.html#after-hours" class="btn btn-dark">View album</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="card artist-card h-100" id="dua-lipa">
                             <div class="artist-photo">
-                                <img src="artist-dua-lipa.jpg" alt="Portrait of Dua Lipa" loading="lazy">
+                                <button type="button" class="music-image-button music-image-button--portrait" data-gallery-trigger aria-label="Enlarge Dua Lipa" aria-haspopup="dialog" aria-controls="music-panel">
+                                    <img src="artist-dua-lipa.jpg" alt="Portrait of Dua Lipa" loading="lazy">
+                                </button>
                             </div>
                             <div class="card-body">
                                 <h2 class="h5 card-title">Dua Lipa</h2>
                                 <p class="text-muted">Pop / Disco</p>
                                 <p class="card-text">Dance-inspired pop with a retro sound. Find Levitating in our song library.</p>
                                 <p class="mb-3">In our collection: Future Nostalgia.</p>
-                                <a href="albums.html#future-nostalgia" class="btn btn-dark">View album</a>
+                                <div class="music-card-actions">
+                                    <button type="button" class="btn btn-dark" data-music-details aria-haspopup="dialog" aria-controls="music-panel">Details</button>
+                                    <a href="albums.html#future-nostalgia" class="btn btn-dark">View album</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="card artist-card h-100" id="ed-sheeran">
                             <div class="artist-photo">
-                                <img src="artist-ed-sheeran.jpg" alt="Portrait of Ed Sheeran" loading="lazy">
+                                <button type="button" class="music-image-button music-image-button--portrait" data-gallery-trigger aria-label="Enlarge Ed Sheeran" aria-haspopup="dialog" aria-controls="music-panel">
+                                    <img src="artist-ed-sheeran.jpg" alt="Portrait of Ed Sheeran" loading="lazy">
+                                </button>
                             </div>
                             <div class="card-body">
                                 <h2 class="h5 card-title">Ed Sheeran</h2>
                                 <p class="text-muted">Pop / Acoustic</p>
                                 <p class="card-text">Acoustic guitar and personal storytelling, with songs such as Shape of You.</p>
                                 <p class="mb-3">In our collection: &divide; (Divide).</p>
-                                <a href="albums.html#divide" class="btn btn-dark">View album</a>
+                                <div class="music-card-actions">
+                                    <button type="button" class="btn btn-dark" data-music-details aria-haspopup="dialog" aria-controls="music-panel">Details</button>
+                                    <a href="albums.html#divide" class="btn btn-dark">View album</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="card artist-card h-100" id="adele">
                             <div class="artist-photo">
-                                <img src="artist-adele.jpg" alt="Portrait of Adele" loading="lazy">
+                                <button type="button" class="music-image-button music-image-button--portrait" data-gallery-trigger aria-label="Enlarge Adele" aria-haspopup="dialog" aria-controls="music-panel">
+                                    <img src="artist-adele.jpg" alt="Portrait of Adele" loading="lazy">
+                                </button>
                             </div>
                             <div class="card-body">
                                 <h2 class="h5 card-title">Adele</h2>
                                 <p class="text-muted">Pop / Soul</p>
                                 <p class="card-text">Powerful vocals and emotional ballads, including Someone Like You.</p>
                                 <p class="mb-3">In our collection: 21.</p>
-                                <a href="albums.html#21" class="btn btn-dark">View album</a>
+                                <div class="music-card-actions">
+                                    <button type="button" class="btn btn-dark" data-music-details aria-haspopup="dialog" aria-controls="music-panel">Details</button>
+                                    <a href="albums.html#21" class="btn btn-dark">View album</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="card artist-card h-100" id="billie-eilish">
                             <div class="artist-photo">
-                                <img src="artist-billie-eilish.jpg" alt="Portrait of Billie Eilish" loading="lazy">
+                                <button type="button" class="music-image-button music-image-button--portrait" data-gallery-trigger aria-label="Enlarge Billie Eilish" aria-haspopup="dialog" aria-controls="music-panel">
+                                    <img src="artist-billie-eilish.jpg" alt="Portrait of Billie Eilish" loading="lazy">
+                                </button>
                             </div>
                             <div class="card-body">
                                 <h2 class="h5 card-title">Billie Eilish</h2>
                                 <p class="text-muted">Alternative pop</p>
                                 <p class="card-text">Quiet vocals and a distinctive pop sound. Explore Bad Guy in our collection.</p>
                                 <p class="mb-3">In our collection: When We All Fall Asleep, Where Do We Go?</p>
-                                <a href="albums.html#when-we-all-fall-asleep" class="btn btn-dark">View album</a>
+                                <div class="music-card-actions">
+                                    <button type="button" class="btn btn-dark" data-music-details aria-haspopup="dialog" aria-controls="music-panel">Details</button>
+                                    <a href="albums.html#when-we-all-fall-asleep" class="btn btn-dark">View album</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="card artist-card h-100" id="harry-styles">
                             <div class="artist-photo">
-                                <img src="artist-harry-styles.jpg" alt="Portrait of Harry Styles" loading="lazy">
+                                <button type="button" class="music-image-button music-image-button--portrait" data-gallery-trigger aria-label="Enlarge Harry Styles" aria-haspopup="dialog" aria-controls="music-panel">
+                                    <img src="artist-harry-styles.jpg" alt="Portrait of Harry Styles" loading="lazy">
+                                </button>
                             </div>
                             <div class="card-body">
                                 <h2 class="h5 card-title">Harry Styles</h2>
                                 <p class="text-muted">Pop / Pop rock</p>
                                 <p class="card-text">Bright pop melodies with rock influences, including Watermelon Sugar.</p>
                                 <p class="mb-3">In our collection: Fine Line.</p>
-                                <a href="albums.html#fine-line" class="btn btn-dark">View album</a>
+                                <div class="music-card-actions">
+                                    <button type="button" class="btn btn-dark" data-music-details aria-haspopup="dialog" aria-controls="music-panel">Details</button>
+                                    <a href="albums.html#fine-line" class="btn btn-dark">View album</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
+        <div class="music-panel-overlay" id="music-panel-overlay" hidden aria-hidden="true"></div>
+        <aside class="music-panel" id="music-panel" role="dialog" aria-modal="true" aria-labelledby="music-details-title" tabindex="-1" hidden>
+            <header class="music-panel__header">
+                <span class="fw-semibold">MusicApp</span>
+                <button type="button" class="btn btn-outline-dark" data-panel-close>Close</button>
+            </header>
+            <div class="music-panel__scroll" data-panel-scroll>
+                <p data-panel-message role="status" hidden></p>
+                <div data-panel-content>
+                    <img class="music-panel__image" data-details-image alt="">
+                    <p class="small text-uppercase text-muted mt-3 mb-2" data-details-type></p>
+                    <h2 class="h3" id="music-details-title" data-details-title></h2>
+                    <dl class="music-panel__metadata mb-4" data-details-metadata></dl>
+                        <section data-details-album hidden>
+                            <h4 class="h5">Track list</h4>
+                            <p class="small text-muted" data-details-edition></p>
+                            <ol class="music-details__tracks" data-details-tracks></ol>
+                        </section>
+                        <div data-details-artist hidden>
+                            <section class="mb-4">
+                                <h4 class="h5">About</h4>
+                                <p data-details-biography></p>
+                            </section>
+                            <section class="mb-4">
+                                <h4 class="h5">Albums in MusicApp</h4>
+                                <ul class="music-details__links" data-details-albums></ul>
+                            </section>
+                            <section class="mb-4">
+                                <h4 class="h5">Songs in MusicApp</h4>
+                                <ul class="music-details__links" data-details-songs></ul>
+                            </section>
+                        </div>
+
+                </div>
+            </div>
+            <footer class="music-panel__controls">
+                <div class="d-flex flex-wrap gap-2">
+                    <button type="button" class="btn btn-outline-dark" data-panel-previous aria-label="Previous image">&larr; Previous</button>
+                    <button type="button" class="btn btn-outline-dark" data-panel-next aria-label="Next image">Next &rarr;</button>
+                </div>
+                <span class="small" data-panel-position role="status" aria-live="polite"></span>
+            </footer>
+        </aside>
         <footer class="bg-dark text-light text-center py-4 mt-5">
             <div class="container">
                 <p class="mb-1">Contact: 250271@astanait.edu.kz</p>

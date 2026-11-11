@@ -1,0 +1,54 @@
+/* Task 2: styles are scoped to search, without changing shared Midterm cards. */
+.catalog-search {
+    padding: 1.5rem;
+    border: 1px solid #d5e5d9;
+    border-top: 4px solid var(--primary-color);
+    border-radius: 0.75rem;
+    background-color: white;
+}
+
+.catalog-search .form-control {
+    min-width: 0;
+}
+
+.catalog-search__result {
+    display: block;
+    padding: 1rem;
+    border: 1px solid #d5e5d9;
+    border-radius: 0.75rem;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.catalog-search__result h3 {
+    min-width: 0;
+}
+
+.catalog-search__result .badge {
+    flex-shrink: 0;
+}
+
+.catalog-search__result:hover,
+.catalog-search__result:focus-visible {
+    border-color: var(--primary-color);
+    color: var(--dark-color);
+    box-shadow: 0 0 0 0.2rem #d9f3e3;
+}
+
+/* Keep a linked song visible below the existing sticky navigation. */
+tr[id^="song-"] {
+    scroll-margin-top: 8rem;
+}
+
+tr[id^="song-"]:target > td {
+    --bs-table-bg: #d9f3e3;
+    --bs-table-striped-bg: #d9f3e3;
+}
+
+@media (max-width: 575.98px) {
+    .catalog-search {
+        padding: 1rem;
+    }
+}
