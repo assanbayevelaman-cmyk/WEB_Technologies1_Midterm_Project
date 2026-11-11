@@ -306,3 +306,137 @@ footer p {
         gap: 0;
     }
 }
+
+/* Dinmukhammed's visual refinement and form feedback styles */
+:root {
+    --primary-dark: #15753b;
+    --surface: #ffffff;
+    --border-soft: #d5e5d9;
+    --shadow-soft: 0 6px 20px rgba(25, 20, 20, 0.08);
+    --shadow-lift: 0 14px 30px rgba(25, 20, 20, 0.16);
+    --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+html { scroll-behavior: smooth; }
+body { background: linear-gradient(180deg, #f6f9f7 0%, #eaf1ec 100%); background-attachment: fixed; }
+.navbar { background: linear-gradient(90deg, #191414 0%, #1d2a22 100%) !important; transition: box-shadow .3s var(--ease); }
+.navbar.scrolled { box-shadow: 0 6px 20px rgba(0,0,0,.3); }
+.navbar .nav-link { transition: color .2s, background-color .2s; }
+.navbar .nav-link.nav-cta { color: var(--dark-color); background: var(--primary-color); font-weight: 600; }
+.navbar .nav-link.nav-cta.active { color: var(--dark-color); }
+.navbar .nav-link.nav-cta:hover, .navbar .nav-link.nav-cta:focus { background: #3ee57a; color: var(--dark-color); }
+main > h1 { letter-spacing: -.5px; }
+main section > h2::after { content: ""; display: block; width: 48px; height: 3px; margin-top: .4rem; border-radius: 2px; background: var(--primary-color); }
+.form-page .card { border: 1px solid var(--border-soft); border-radius: 1rem; box-shadow: var(--shadow-soft); }
+.form-page .form-control:focus, main form .form-control:focus, main form .form-select:focus { border-color: var(--primary-color); box-shadow: 0 0 0 .2rem rgba(29,185,84,.18); }
+.field-msg { min-height: 1.25rem; margin-top: .25rem; }
+.pw-meter-track { height: 7px; overflow: hidden; border-radius: 99px; background: #e4e9e5; }
+.pw-meter-fill { display: block; width: 0; height: 100%; border-radius: inherit; transition: width .25s ease, background-color .25s ease; background: #dc3545; }
+.pw-meter[data-level="medium"] .pw-meter-fill { background: #f0ad4e; }
+.pw-meter[data-level="strong"] .pw-meter-fill { background: #198754; }
+.pw-rules li { margin-top: .2rem; }
+.pw-rules li.met { color: #198754; }
+.form-page .btn-dark:hover { background: #15753b; border-color: #15753b; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; } }
+
+/* Albums */
+.album-cover {
+    width: 100%;
+    height: auto;
+}
+
+.album-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+}
+
+/* Artists */
+.artist-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.artist-photo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 280px;
+    padding: 1rem;
+    background-color: var(--light-color);
+}
+
+.artist-photo img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 0.5rem;
+}
+
+.artists-page .row > div:nth-child(even) .artist-photo {
+    background-color: #e9ecef;
+}
+
+.artist-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+/* Albums and Artists */
+.artist-card .card-body {
+    flex: 1;
+}
+
+.album-card .card-body, .artist-card .card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.album-card .btn, .artist-card .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.album-card .btn:hover, .album-card .btn:focus,
+.artist-card .btn:hover, .artist-card .btn:focus {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--dark-color);
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .albums-page .navbar-nav, .artists-page .navbar-nav {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .albums-page h1, .artists-page h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .albums-page, .artists-page {
+        font-size: 1rem;
+    }
+
+    .albums-page h1, .artists-page h1 {
+        font-size: 1.75rem;
+    }
+
+    .albums-page .navbar-nav, .artists-page .navbar-nav {
+        flex-direction: column;
+        gap: 0;
+    }
+}

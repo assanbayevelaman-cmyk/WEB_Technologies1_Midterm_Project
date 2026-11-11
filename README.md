@@ -18,7 +18,9 @@ A responsive multi-page music discovery website built with HTML, CSS, Bootstrap,
 - Songs page with a table of 10 tracks.
 - Dynamic Table with CRUD operations on Songs. Insertion of new entries into a table, inline editing of existing records, delete option with confirmation prompts.
 - Playlists page with Bootstrap cards for 6 playlists in a responsive grid.
-- Contact page with a feedback form and a contact info card.
+- Contact page with a feedback form, contact info card, and live input validation.
+- Registration page with real-time name/email/password validation, password strength feedback, matching confirmation, and submission guidance.
+- Shared Sign up navigation and consistent form styling across the pages.
 - Albums page with a responsive grid of album cards.
 - Artists page with artist cards, photos, genres, and album links.
 - Interactive Image Gallery on Albums and Artists: clicking an image opens a fixed side panel over a dark overlay, with enlarged images.
@@ -63,7 +65,10 @@ A responsive multi-page music discovery website built with HTML, CSS, Bootstrap,
 - Built `playlists.html` and `contact.html`
 - Used the same navbar, footer, and `style.css` as the other pages to keep the design consistent
 - Made the Playlists page with Bootstrap cards (title, description, songs, and a "Listen" button) in a responsive grid: 1 card per row on mobile, 2 on tablet, 3 on desktop
-- Made the Contact page with a form (name, email, topic, message, checkbox) using Bootstrap form classes and basic validation with `required` and `type="email"`
+- Added `register.html` with client-side validation for name, email format, password strength, and matching password confirmation
+- Added live feedback and submission guidance in `js/form-validation.js`
+- Extended the Contact form checks for required name, valid email format, and message length
+- Refined the shared stylesheet and added a Sign up link across the site
 - Used a two-column layout on the Contact page that stacks on small screens
 
 ## Link to Published Website
