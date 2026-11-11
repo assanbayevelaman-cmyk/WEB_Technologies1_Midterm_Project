@@ -14,8 +14,9 @@ A responsive multi-page music discovery website built with HTML, CSS, Bootstrap,
 ## Features Implemented
 - Home page with an "About Us" section and a "What You Can Do" list.
 - Dynamic Search & Filter on Home. Search updates while typing, ignores case and surrounding spaces, and works together with All / Songs / Albums / Artists filters without reloading the page.
-- Search result counts, a no-results message, a clear button, and links to specific catalog entries. 
+- Search result counts, a no-results message, a clear button, and links to specific catalog entries.
 - Songs page with a table of 10 tracks.
+- Dynamic Table with CRUD operations on Songs. Insertion of new entries into a table, inline editing of existing records, delete option with confirmation prompts.
 - Playlists page with Bootstrap cards for 6 playlists in a responsive grid.
 - Contact page with a feedback form and a contact info card.
 - Albums page with a responsive grid of album cards.
@@ -40,6 +41,11 @@ A responsive multi-page music discovery website built with HTML, CSS, Bootstrap,
 - Wrote `style.css` for both pages
 - Implemented navbar, footer, and songs table
 - Added responsive breakpoints for tablet and mobile
+- Created a table for user suggested songs.
+- Implemented full CRUD functionality using JavaScript.
+- Added the ability to add new entries to the song suggestions table.
+- Enabled inline editing of existing records.
+- Allowed users to remove items with confirmation prompts.
 
 **Akkulov Zhasulan**
 - Implemented Home search for published songs, albums, and artists
