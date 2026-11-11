@@ -1,7 +1,7 @@
 # Music Playlist Website: songs, albums, artists
 
 ## Project Title and Topic
-MusicApp** - a multi-page music discovery website for browsing songs, albums, artists, and playlists.
+**MusicApp** - a multi-page music discovery website for browsing songs, albums, artists, and playlists.
 
 ## Group Member Names
 - **Assanbayev Yelaman**
