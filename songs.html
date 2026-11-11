@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Songs | MusicApp</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="css/search.css">
+        <script src="script.js"></script>
     </head>
     <body>
         <header class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
@@ -41,76 +38,107 @@
                     <th>Album</th>
                     <th>Duration</th>
                 </tr>
-                <tr id="song-blinding-lights">
+                <tr>
                     <td>1</td>
                     <td>Blinding Lights</td>
                     <td>The Weeknd</td>
                     <td>After Hours</td>
                     <td>3:20</td>
                 </tr>
-                <tr id="song-levitating">
+                <tr>
                     <td>2</td>
                     <td>Levitating</td>
                     <td>Dua Lipa</td>
                     <td>Future Nostalgia</td>
                     <td>3:23</td>
                 </tr>
-                <tr id="song-shape-of-you">
+                <tr>
                     <td>3</td>
                     <td>Shape of You</td>
                     <td>Ed Sheeran</td>
                     <td>÷ (Divide)</td>
                     <td>3:53</td>
                 </tr>
-                <tr id="song-someone-like-you">
+                <tr>
                     <td>4</td>
                     <td>Someone Like You</td>
                     <td>Adele</td>
                     <td>21</td>
                     <td>4:45</td>
                 </tr>
-                <tr id="song-starboy">
+                <tr>
                     <td>5</td>
                     <td>Starboy</td>
                     <td>The Weeknd</td>
                     <td>Starboy</td>
                     <td>3:50</td>
                 </tr>
-                <tr id="song-bad-guy">
+                <tr>
                     <td>6</td>
                     <td>Bad Guy</td>
                     <td>Billie Eilish</td>
                     <td>When We All Fall Asleep</td>
                     <td>3:14</td>
                 </tr>
-                <tr id="song-rolling-in-the-deep">
+                <tr>
                     <td>7</td>
                     <td>Rolling in the Deep</td>
                     <td>Adele</td>
                     <td>21</td>
                     <td>3:48</td>
                 </tr>
-                <tr id="song-uptown-funk">
+                <tr>
                     <td>8</td>
                     <td>Uptown Funk</td>
                     <td>Mark Ronson ft. Bruno Mars</td>
                     <td>Uptown Special</td>
                     <td>4:30</td>
                 </tr>
-                <tr id="song-watermelon-sugar">
+                <tr>
                     <td>9</td>
                     <td>Watermelon Sugar</td>
                     <td>Harry Styles</td>
                     <td>Fine Line</td>
                     <td>2:54</td>
                 </tr>
-                <tr id="song-billie-jean">
+                <tr>
                     <td>10</td>
                     <td>Billie Jean</td>
                     <td>Michael Jackson</td>
                     <td>Thriller</td>
                     <td>4:57</td>
                 </tr>
+            </table>
+            <p class="mt-5">Suggest your favorite songs that you want to see on our website.</p>
+            <form id="suggForm" class="row g-2 mb-3">
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="suggTitle" placeholder="Title" required>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="suggArtist" placeholder="Artist" required>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" id="suggAlbum" placeholder="Album" required>
+                </div>
+                <div class="col-md-1">
+                    <button type="submit" class="btn btn-success w-100" id="submitBtn">Add</button>
+                </div>
+            </form>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr class="table-dark">
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Artist</th>
+                        <th>Album</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="suggBody">
+                    <tr>
+                        <td colspan="5" class="text-center text-muted py-3">No suggestions yet.</td>
+                    </tr>
+                </tbody>
             </table>
         </main>
         <footer class="bg-dark text-light text-center py-4 mt-5">
