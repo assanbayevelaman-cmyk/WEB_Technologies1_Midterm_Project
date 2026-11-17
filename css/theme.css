@@ -17,6 +17,7 @@
 [data-theme="dark"] .alert-light {
     color: #191414 !important;
 }
+[data-theme="dark"] textarea,
 [data-theme="dark"] input {
     background: white !important;
 }
