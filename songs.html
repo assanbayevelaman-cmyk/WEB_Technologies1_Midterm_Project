@@ -10,7 +10,9 @@
         <link rel="stylesheet" href="css/music-api.css">
         <script src="js/music-api.js" defer></script>
         <link rel="stylesheet" href="css/theme.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
         <script src="js/theme.js" defer></script>
+        <script src="js/faq.js" defer></script>
     </head>
     <body>
         <header class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
@@ -159,6 +161,29 @@
                 </form>
                 <p id="music-api-status" class="music-api__status" role="status" aria-live="polite" aria-atomic="true">Enter a music query and press Search.</p>
                 <div><ul id="music-api-results" class="row g-3 list-unstyled mb-0" aria-label="iTunes search results"></ul></div>
+            </section>
+            <section class="faq mt-5">
+                <h2>FAQ</h2>
+                <div class="faq-item">
+                    <button class="faq-q">What is MusicApp? <span>+</span></button>
+                    <div class="faq-a"><p>A song library where visitors suggest tracks, and browse albums and artists.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">How do I suggest a song? <span>+</span></button>
+                    <div class="faq-a"><p>Scroll to the suggestion form, fill in title, artist, and album, then click Add.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">Can I edit or delete a suggestion? <span>+</span></button>
+                    <div class="faq-a"><p>Yes - click Edit to change a row, or Delete to remove it (with confirmation).</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">Is there a dark mode? <span>+</span></button>
+                    <div class="faq-a"><p>Yes - click the Dark/Light button in the navbar. Your choice is saved across pages.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">How do I contact you? <span>+</span></button>
+                    <div class="faq-a"><p>Open the Contact page from the navigation menu, fill in the form, and send your message.</p></div>
+                </div>
             </section>
         </main>
         <footer class="bg-dark text-light text-center py-4 mt-5">
