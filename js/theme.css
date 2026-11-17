@@ -1,0 +1,22 @@
+[data-theme="dark"] body {
+    background: #0f1720;
+    color: #e6edf5;
+}
+[data-theme="dark"] .table {
+    color: #e6edf5;
+}
+[data-theme="dark"] .form-control {
+    background: #1a2531;
+    color: #e6edf5;
+    border-color: #2c3b4d;
+}
+[data-theme="dark"] .bg-light,
+[data-theme="dark"] .catalog-search,
+[data-theme="dark"] #recommend,
+[data-theme="dark"] label,
+[data-theme="dark"] .alert-light {
+    color: #191414 !important;
+}
+[data-theme="dark"] input {
+    background: white !important;
+}
