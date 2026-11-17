@@ -36,6 +36,9 @@ A responsive multi-page music discovery website built with HTML, CSS, Bootstrap,
 - DOM API
 - jQuery
 - Google Fonts
+- Fetch API
+- JSON
+- Async/Await
 
 ## Individual Contribution  
 **Assanbayev Yelaman**
@@ -49,17 +52,18 @@ A responsive multi-page music discovery website built with HTML, CSS, Bootstrap,
 - Enabled inline editing of existing records.
 - Allowed users to remove items with confirmation prompts.
 
-**Akkulov Zhasulan**
-- Implemented Home search for published songs, albums, and artists
-- Added category filtering without page reloads
-- Implemented case-insensitive search, result rendering and counts, clearing, and links to specific entries
-- Organized the catalog data and search logic in separate JavaScript files
-- Implemented interactive album and artist galleries using Bootstrap Grid
-- Added enlarged image viewing in a responsive side panel
-- Implemented cyclic Previous / Next navigation and jQuery Fade Effects
-- Added album details, track lists, and artist profiles
-- Adapted the card grid and panel behavior for different screen sizes
-
+### Akkulov Zhasulan
+- Implemented the **Discover More Music** feature on the Songs page using the **iTunes Search API**.
+- Integrated a public music API using JavaScript `fetch()`.
+- Retrieved and processed music data in JSON format.
+- Implemented a search form for finding songs and artists.
+- Dynamically displayed song titles, artist names, albums, and genres using DOM manipulation.
+- Added links to the corresponding music records on iTunes.
+- Implemented loading indicators, empty results messages, and error handling for failed requests.
+- Added input validation to prevent empty searches.
+- Handled consecutive asynchronous requests to prevent outdated results from replacing newer ones.
+- Created responsive styling for the API search section.
+- Preserved compatibility with the existing music catalog, CRUD functionality, and other MusicApp features.
 
 **Dinmukhammed Dauletkhan**
 - Built `playlists.html` and `contact.html`
