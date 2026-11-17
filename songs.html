@@ -1,9 +1,14 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <title>Songs | MusicApp</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/music-api.css">
+        <script src="js/music-api.js" defer></script>
     </head>
     <body>
         <header class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
@@ -140,6 +145,18 @@
                     </tr>
                 </tbody>
             </table>
+            <section class="music-api mt-5" id="music-api" aria-labelledby="music-api-heading">
+                <h2 id="music-api-heading">Discover More Music</h2>
+                <form id="music-api-form" class="music-api__form" novalidate>
+                    <label for="music-api-query" class="form-label">Search songs, artists or albums on iTunes</label>
+                    <div class="music-api__search">
+                        <input type="search" class="form-control" id="music-api-query" autocomplete="off" aria-describedby="music-api-status">
+                        <button type="submit" class="btn btn-dark">Search</button>
+                    </div>
+                </form>
+                <p id="music-api-status" class="music-api__status" role="status" aria-live="polite" aria-atomic="true">Enter a music query and press Search.</p>
+                <div><ul id="music-api-results" class="row g-3 list-unstyled mb-0" aria-label="iTunes search results"></ul></div>
+            </section>
         </main>
         <footer class="bg-dark text-light text-center py-4 mt-5">
             <div class="container">

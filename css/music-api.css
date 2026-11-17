@@ -1,0 +1,50 @@
+.music-api {
+    padding: 1.5rem;
+    border: 1px solid var(--border-soft, #d5e5d9);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 0.75rem;
+    background: var(--surface, #fff);
+    color: var(--dark-color);
+}
+
+.music-api .music-api__form {
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+
+.music-api__search {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.music-api__search input {
+    min-width: 0;
+}
+
+.music-api__status {
+    margin-block: 1rem;
+    overflow-wrap: anywhere;
+}
+
+.music-api[data-state="error"] .music-api__status {
+    font-weight: 600;
+}
+
+.music-api__result {
+    height: 100%;
+    padding: 1rem;
+    border: 1px solid var(--border-soft, #d5e5d9);
+    border-radius: 0.5rem;
+    overflow-wrap: anywhere;
+}
+
+.music-api__result p {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 575.98px) {
+    .music-api {
+        padding: 1rem;
+    }
+}
