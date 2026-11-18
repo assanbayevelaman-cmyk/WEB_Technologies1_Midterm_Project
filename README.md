@@ -1,79 +1,71 @@
-# Music Playlist Website: songs, albums, artists
+# MusicApp: Final Project (WEB Technologies 1)
 
 ## Project Title and Topic
-**MusicApp** - a multi-page music discovery website for browsing songs, albums, artists, and playlists.
+**MusicApp** is a multi-page music discovery website for browsing songs, albums, artists, and playlists, and for finding more music through a public API.
 
-## Group Member Names
+## Group Members
 - **Assanbayev Yelaman**
-- **Dinmukhammed Dauletkhan**
 - **Akkulov Zhasulan**
+- **Dinmukhammed Dauletkhan**
+
+## Links
+- **Deployed website (GitHub Pages):** https://assanbayevelaman-cmyk.github.io/WEB_Technologies1_Midterm_Project/
+- **GitHub repository:** https://github.com/assanbayevelaman-cmyk/WEB_Technologies1_Midterm_Project
 
 ## Short Description
-A responsive multi-page music discovery website built with HTML, CSS, Bootstrap, JavaScript, and jQuery. Visitors can search the published catalog, explore album track lists and artist profiles, and browse enlarged images in a fixed side panel. MusicApp is a static frontend project; it does not provide a backend, Spotify API integration, or audio streaming.
+A responsive, multi-page music website built with HTML5, CSS, Bootstrap, JavaScript, jQuery, and the iTunes Search API. Visitors can search the catalog, explore album and artist details, suggest songs, switch between Light and Dark themes, sign in, and search for real songs through the API. It is a static frontend project: there is no backend and no audio streaming.
+
+## Pages (8)
+| Page | File |
+|---|---|
+| Home (catalog search and filters) | `index.html` |
+| Songs (table, CRUD suggestions, iTunes API search, FAQ) | `songs.html` |
+| Albums | `albums.html` |
+| Artists | `artists.html` |
+| Playlists | `playlists.html` |
+| Contact | `contact.html` |
+| Create account | `register.html` |
+| Sign in | `signin.html` |
+
+A shared navigation bar is visible on every page.
 
 ## Features Implemented
-- Home page with an "About Us" section and a "What You Can Do" list.
-- Dynamic Search & Filter on Home. Search updates while typing, ignores case and surrounding spaces, and works together with All / Songs / Albums / Artists filters without reloading the page.
-- Search result counts, a no-results message, a clear button, and links to specific catalog entries.
-- Songs page with a table of 10 tracks.
-- Dynamic Table with CRUD operations on Songs. Insertion of new entries into a table, inline editing of existing records, delete option with confirmation prompts.
-- Playlists page with Bootstrap cards for 6 playlists in a responsive grid.
-- Contact page with a feedback form, contact info card, and live input validation.
-- Registration page with real-time name/email/password validation, password strength feedback, matching confirmation, and submission guidance.
-- Shared Sign up navigation and consistent form styling across the pages.
-- Albums page with a responsive grid of album cards.
-- Artists page with artist cards, photos, genres, and album links.
-- Interactive Image Gallery on Albums and Artists: clicking an image opens a fixed side panel over a dark overlay, with enlarged images.
-- Album Details with release year, genre, edition information, and complete track lists for the six selected album editions.
-- Artist Details with short biographies, genres, and links to related albums and songs available in MusicApp.
-- Shared sticky navigation bar and footer.
-- External stylesheet with CSS variables, Google Font, hover/focus states, and media queries for tablet and mobile.
+
+### Final project requirements
+- **Light/Dark theme toggle** (`js/theme.js`): the choice is saved in `localStorage`, stays active after a refresh, and is applied on all pages.
+- **Sign-in with localStorage** (`js/auth.js`, `signin.html`): a validated form (email format, password of at least 8 characters). Only non-sensitive data (email and display name) is saved, never the password. The session survives a refresh. On every page the navbar shows "Sign in" when signed out, or a greeting and a **Sign out** button when signed in. Sign out clears the saved state.
+- **jQuery FAQ** (`js/faq.js`, Songs page): 5 music-related questions, answers open and close with `.slideToggle()`, and a + / − indicator shows the state.
+- **API integration** (`js/music-api.js`, Songs page): the public **iTunes Search API** is called with `fetch()`, JSON is processed, and results are rendered dynamically. Users can search by song, artist, or album. Empty input, loading state, no results, and request errors are handled.
+
+### Earlier features
+- Home page with dynamic search and All / Songs / Albums / Artists filters.
+- Songs table with CRUD for song suggestions (add, inline edit, delete with confirmation).
+- Albums and Artists pages with an interactive image gallery, album track lists, and artist details.
+- Playlists page with responsive Bootstrap cards.
+- Contact form and registration form with live validation and a password-strength meter.
+- Responsive layout (Flexbox / Grid / Bootstrap) for desktop, tablet, and mobile, with a shared sticky navbar and footer.
 
 ## Technologies Used
-- HTML, CSS
-- Bootstrap
-- JavaScript
-- DOM API
-- jQuery
-- Google Fonts
-- Fetch API
-- JSON
-- Async/Await
+HTML5, CSS3, Bootstrap 5, JavaScript (DOM API, Fetch API, async/await, JSON, localStorage), jQuery, iTunes Search API, Google Fonts.
 
-## Individual Contribution  
-**Assanbayev Yelaman**
-- Built `index.html` and `songs.html`
-- Wrote `style.css` for both pages
-- Implemented navbar, footer, and songs table
-- Added responsive breakpoints for tablet and mobile
-- Created a table for user suggested songs.
-- Implemented full CRUD functionality using JavaScript.
-- Added the ability to add new entries to the song suggestions table.
-- Enabled inline editing of existing records.
-- Allowed users to remove items with confirmation prompts.
+## Individual Contributions (Final Project)
 
-### Akkulov Zhasulan
-- Implemented the **Discover More Music** feature on the Songs page using the **iTunes Search API**.
-- Integrated a public music API using JavaScript `fetch()`.
-- Retrieved and processed music data in JSON format.
-- Implemented a search form for finding songs and artists.
-- Dynamically displayed song titles, artist names, albums, and genres using DOM manipulation.
-- Added links to the corresponding music records on iTunes.
-- Implemented loading indicators, empty results messages, and error handling for failed requests.
-- Added input validation to prevent empty searches.
-- Handled consecutive asynchronous requests to prevent outdated results from replacing newer ones.
-- Created responsive styling for the API search section.
-- Preserved compatibility with the existing music catalog, CRUD functionality, and other MusicApp features.
+**Akkulov Zhasulan: API Integration (15 points)**
+- Integrated the public iTunes Search API on the Songs page using `fetch()`.
+- Processed the JSON data and displayed titles, artists, albums, genres, and iTunes links dynamically.
+- Added the search form, empty-input validation, loading indicator, empty-result message, and error handling.
+- Prevented outdated responses from replacing newer ones.
+- Wrote the responsive styling for the API section (`css/music-api.css`).
 
-**Dinmukhammed Dauletkhan**
-- Built `playlists.html` and `contact.html`
-- Used the same navbar, footer, and `style.css` as the other pages to keep the design consistent
-- Made the Playlists page with Bootstrap cards (title, description, songs, and a "Listen" button) in a responsive grid: 1 card per row on mobile, 2 on tablet, 3 on desktop
-- Added `register.html` with client-side validation for name, email format, password strength, and matching password confirmation
-- Added live feedback and submission guidance in `js/form-validation.js`
-- Extended the Contact form checks for required name, valid email format, and message length
-- Refined the shared stylesheet and added a Sign up link across the site
-- Used a two-column layout on the Contact page that stacks on small screens
+**Assanbayev Yelaman: Theme + FAQ (20 points)**
+- Implemented the Light/Dark theme for all MusicApp pages with `localStorage` persistence (`js/theme.js`, `css/theme.css`).
+- Built the FAQ section with 5 questions and jQuery `.slideToggle()` with a + / − indicator (`js/faq.js`).
+- Earlier work: `index.html`, `songs.html`, shared `style.css`, navbar, footer, songs table, responsive breakpoints, and the CRUD table for song suggestions.
 
-## Link to Published Website
-https://assanbayevelaman-cmyk.github.io/WEB_Technologies1_Midterm_Project/
+**Dinmukhammed Dauletkhan: Sign-in + Report (15 points)**
+- Built the sign-in form with validation, the sign-in and sign-out logic, and the signed-in navbar interface (`signin.html`, `js/auth.js`, `css/auth.css`).
+- Wrote this README and prepared the group report.
+- Earlier work: `playlists.html`, `contact.html`, `register.html`, `js/form-validation.js`, and the shared Sign up link.
+
+## AI Usage Disclosure
+AI tools (Claude by Anthropic) were used only as supporting tools for debugging, code review, and cross-browser checks. The group's own implementation work, technical decisions, and responsibility for the submitted code were not replaced by AI. This credit is also shown in the footer of every page and in the group report.

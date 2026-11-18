@@ -18,8 +18,10 @@
     color: #191414 !important;
 }
 [data-theme="dark"] textarea,
-[data-theme="dark"] input {
+[data-theme="dark"] input,
+[data-theme="dark"] select {
     background: white !important;
+    color: #191414 !important;
 }
 .faq-q {
     width: 100%;
