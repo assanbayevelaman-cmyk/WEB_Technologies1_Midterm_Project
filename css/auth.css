@@ -1,0 +1,47 @@
+.nav-auth {
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+}
+
+.nav-auth-greeting {
+    white-space: nowrap;
+}
+
+.nav-auth-button {
+    margin: .25rem .5rem;
+}
+
+.signin-card {
+    background: var(--bs-body-bg, #fff);
+}
+
+.signin-card form {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.signin-card .form-control {
+    color: #191414;
+    background-color: #fff;
+}
+
+[data-theme="dark"] .signin-card .form-control {
+    color: #e6edf5;
+    background-color: #1a2531;
+    border-color: #2c3b4d;
+}
+
+@media (max-width: 991.98px) {
+    .nav-auth {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-auth-button {
+        margin-left: .75rem;
+    }
+}
