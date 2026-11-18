@@ -68,4 +68,4 @@ HTML5, CSS3, Bootstrap 5, JavaScript (DOM API, Fetch API, async/await, JSON, loc
 - Earlier work: `playlists.html`, `contact.html`, `register.html`, `js/form-validation.js`, and the shared Sign up link.
 
 ## AI Usage Disclosure
-AI tools (Claude by Anthropic) were used only as supporting tools for debugging, code review, and cross-browser checks. The group's own implementation work, technical decisions, and responsibility for the submitted code were not replaced by AI. This credit is also shown in the footer of every page and in the group report.
+AI tools were used only as supporting tools for debugging, code review, and cross-browser checks. The group's own implementation work, technical decisions, and responsibility for the submitted code were not replaced by AI. This credit is also shown in the footer of every page and in the group report.
